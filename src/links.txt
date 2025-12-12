@@ -1,0 +1,47 @@
+
+Bearer token :
+
+
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OGNjMzVjNzIwZmQ0YzI2YTRlOTE0ODcyZTg5ODA4OSIsIm5iZiI6MTc1Njk4OTMxNy44MjMsInN1YiI6IjY4Yjk4Nzg1NzRjNWUwMzY4MTliZjQ1NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TNCBpyJf2HAp7UIYG8_7qtj9l8XFIz54yhmfQpIcgRk'
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+* Now playing 
+
+https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1
+
+* popular
+
+https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
+
+* top rated
+
+https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1
+
+* upcoming 
+
+https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1
+
+
+* movie details
+
+https://api.themoviedb.org/3/movie/{movie_id}?language=en-US
+
+
+* search 
+
+https://api.themoviedb.org/3/search/{movie}?include_adult=false&language=en-US&page=1
