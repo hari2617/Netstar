@@ -1,35 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect }  from 'react'
 import Card from '../Components/Card'
 
-const Movies = () => {
+import useFetch from '../hooks/useFetch';
 
 
-    const [movies, setMovies] = useState([]);
 
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0OGNjMzVjNzIwZmQ0YzI2YTRlOTE0ODcyZTg5ODA4OSIsIm5iZiI6MTc1Njk4OTMxNy44MjMsInN1YiI6IjY4Yjk4Nzg1NzRjNWUwMzY4MTliZjQ1NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TNCBpyJf2HAp7UIYG8_7qtj9l8XFIz54yhmfQpIcgRk'
-        }
-    };
-
-    useEffect(() => {
-
-        const fetchMovies = async () => {
-
-            const list = await fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", options);
-
-            const data = await list.json();
+const Movies = ({api,title}) => {
 
 
-            setMovies(data.results)
+   
+    const {movies}=useFetch(api)
 
-        }
 
-        fetchMovies();
-    }, [])
-
+ useEffect(()=>{
+    document.title=`${title}/Netstar`;
+ })
+    
+      
+    
     console.log(movies)
 
 

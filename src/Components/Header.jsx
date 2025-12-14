@@ -1,5 +1,6 @@
 import React from 'react'
-import {NavLink } from 'react-router-dom'
+import {NavLink, useNavigate } from 'react-router-dom'
+
 
 const Header = () => {
 
@@ -9,9 +10,23 @@ const Header = () => {
 
   const inActiveClass = "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
 
+  const navigate=useNavigate()
 
+
+  const handleSubmit=(e)=>{
+      e.preventDefault();
+      const query=e.target.search.value;
+
+      e.target.reset();
+      return navigate(`search?q=${query}`)
+
+      
+  }
 
   return (
+
+
+    
    
 
     <header>
@@ -19,7 +34,7 @@ const Header = () => {
         <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4">
           <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Cinebite</span>
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Netstar</span>
           </NavLink>
           <div className="flex md:order-2">
             <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
@@ -35,7 +50,7 @@ const Header = () => {
                 </svg>
                 <span className="sr-only">Search icon</span>
               </div>
-              <form >
+              <form onSubmit={handleSubmit}>
               <input type="text" id="search-navbar" name="search" className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..."/>
               </form>
             </div>
