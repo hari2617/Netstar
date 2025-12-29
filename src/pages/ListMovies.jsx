@@ -5,7 +5,7 @@ import useFetch from '../hooks/useFetch';
 
 
 
-const Movies = ({api,title}) => {
+const ListMovie = ({api,title}) => {
 
 
    
@@ -41,4 +41,4 @@ const Movies = ({api,title}) => {
     )
 }
 
-export default Movies
+export default ListMovie;
